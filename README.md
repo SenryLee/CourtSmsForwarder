@@ -4,23 +4,44 @@
 
 包名：`cn.senrylee.courtsms`
 
-## 下载
+## 下载（请装这个）
 
-当前可安装调试包：
+**v1.0.1 调试包（已修复启动闪退）：**
 
-https://github.com/SenryLee/SmsForwarder/releases/download/courtsms-v1.0.0-debug/CourtSms_1.0.0.260911_100100_universal_debug.apk
+https://github.com/SenryLee/SmsForwarder/releases/download/courtsms-v1.0.1-debug/CourtSms_1.0.1.260911_100101_universal_debug.apk
 
-发布页：https://github.com/SenryLee/SmsForwarder/releases/tag/courtsms-v1.0.0-debug
+发布页：https://github.com/SenryLee/SmsForwarder/releases/tag/courtsms-v1.0.1-debug
+
+> 请先卸载旧版再安装。
+
+## 本版修复
+
+- 修复一点开就闪退（Application 阶段错误启动前台服务）
+- 首启自动预置法院规则（`法院号码·12368`、`法院关键词·案号送达`）
+- 启动引导精简
+- 配色改为柔和暗红（非蓝、非刺眼大红）
 
 ## 怎么用
 
-1. 安装 APK，授予短信相关权限
+1. 安装 APK，授予短信 / 通知权限
 2. 打开设置，填写邮箱与 SMTP 授权码
-3. 保存后自动写入法院规则并开始转发
+3. 保存后规则自动绑定该邮箱
 4. 在「转发日志」核对结果
 
-## 源码状态
+## 源码
 
-完整产品化改造 PR：https://github.com/SenryLee/SmsForwarder/pull/2
+完整代码当前在开发分支 / PR：
 
-合并后会将本仓库作为正式主仓迁入完整源码。
+https://github.com/SenryLee/SmsForwarder/pull/2
+
+分支：`cursor/court-sms-app-a186`
+
+> 说明：当前自动化账号对 `CourtSmsForwarder` 仓库没有 git push 权限（仅能改 README）。
+> 请你在 GitHub 把该仓库的 Write 权限授给 Cursor bot，或本地执行：
+>
+> ```bash
+> git clone https://github.com/SenryLee/SmsForwarder.git
+> cd SmsForwarder && git checkout cursor/court-sms-app-a186
+> git remote add court https://github.com/SenryLee/CourtSmsForwarder.git
+> git push court cursor/court-sms-app-a186:main --force
+> ```
